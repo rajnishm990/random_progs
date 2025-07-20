@@ -8,7 +8,7 @@ INITIAL_VIEWS = 100_000     # initial number of page views
 VIEWS_LOST = 5_000          # views lost per extra ad
 REV_PER_IMPRESSION = 0.001  # revenue per ad impression 
 
-def rev(x: int) -> int:
+def rev(x):
     """ returns initial revenue given X number of ads
         args x = Number of ads    
       """
