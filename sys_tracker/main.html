@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Python System Monitor</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Python System Monitor</title>
+</head>
+<body>
+  <h2>Live Metrics</h2>
+  <p>CPU: <span id="cpu"></span>%</p>
+  <p>Memory: <span id="memory"></span>%</p>
+  <p>Disk: <span id="disk"></span>%</p>
+
+<script>
+    const socket = new WebSocket("ws://localhost:8000/ws");
+    socket.onmessage = function(event) {
+      const data = JSON.parse(event.data);
+      document.getElementById("cpu").textContent = data.cpu;
+      document.getElementById("memory").textContent = data.memory;
+      document.getElementById("disk").textContent = data.disk;
+    };
+  </script>
+</body>
+</html>
+</body>
+</html>
