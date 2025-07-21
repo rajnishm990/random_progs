@@ -6,8 +6,9 @@ app = FastAPI()
 
 app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
-    await websocket.accept()
-    data = get_metrics()
-    await websocket.send_json(data)
-    await asyncio.sleep(1)
+    while True:
+        data = get_metrics()
+        await websocket.send_json(data)
+        await asyncio.sleep(1)
+        
 

@@ -8,8 +8,17 @@ def get_metrics():
         "net": psutil.net_io_counters(pernic=False)._asdict()
     }
 
-if __name__ == '__main__':
-    print(get_metrics())
+def alert_if_high(data):
+    if data["cpu"] > 90:
+        print('Alert High tempreture ')
+    else:
+        print("Safe Temp")
+
+if __name__ == "__main__":
+    data = get_metrics()
+    print(data)
+    alert_if_high(data)
+
 
 
     
