@@ -38,7 +38,7 @@ def preprocess_text(text: str) -> str:
 
     return tokens 
 
-def stem_tokens(token: str)-> str:
+def stem_token(token: str)-> str:
     """Simple stemming function (more complex algorithms can be used in practical applications)"""
     # Handle common suffixes
     suffixes = ['ing', 'ly', 'ed', 'es', 's'] 
